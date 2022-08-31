@@ -1,6 +1,6 @@
 package responses
 
-type Header struct {
+type General struct {
 	D struct {
 	BusinessPartner                string      `json:"BusinessPartner"`
 	Customer                       string      `json:"Customer"`

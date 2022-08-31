@@ -2,6 +2,7 @@ package sap_api_caller
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"sap-api-integrations-business-partner-creates/SAP_API_Caller/requests"
@@ -9,7 +10,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/latonaio/golang-logging-library/logger"
+	"github.com/latonaio/golang-logging-library-for-sap/logger"
 	sap_api_post_header_setup "github.com/latonaio/sap-api-post-header-setup"
 	"golang.org/x/xerrors"
 )
@@ -31,10 +32,10 @@ func NewSAPAPICaller(baseUrl, sapClientNumber string, postClient *sap_api_post_h
 }
 
 func (c *SAPAPICaller) AsyncPostBP(
-	general            *requests.General,
-	role               *requests.Role,
-	address            *requests.Address,
-	bank               *requests.Bank,
+	general *requests.General,
+	role *requests.Role,
+	address *requests.Address,
+	bank *requests.Bank,
 	accepter []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
@@ -90,6 +91,7 @@ func (c *SAPAPICaller) callBPSrvAPIRequirementGeneral(api string, general *reque
 	}
 	defer resp.Body.Close()
 	byteArray, _ := ioutil.ReadAll(resp.Body)
+	fmt.Println(string(byteArray))
 	if resp.StatusCode != http.StatusOK && resp.StatusCode != http.StatusCreated {
 		return nil, xerrors.Errorf("bad response:%s", string(byteArray))
 	}

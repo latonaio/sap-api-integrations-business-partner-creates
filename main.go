@@ -5,7 +5,7 @@ import (
 	sap_api_input_reader "sap-api-integrations-business-partner-creates/SAP_API_Input_Reader"
 	"sap-api-integrations-business-partner-creates/config"
 
-	"github.com/latonaio/golang-logging-library/logger"
+	"github.com/latonaio/golang-logging-library-for-sap/logger"
 	sap_api_post_header_setup "github.com/latonaio/sap-api-post-header-setup"
 )
 
@@ -20,12 +20,12 @@ func main() {
 		pc,
 		l,
 	)
-	inputSDC          := fr.ReadSDC("./Inputs/SDC_Business_Partner_General_sample.json")
-	accepter          := getAccepter(inputSDC)
-	general           := inputSDC.ConvertToGeneral()
-	role              := inputSDC.ConvertToRole()
-	address           := inputSDC.ConvertToAddress()
-	bank              := inputSDC.ConvertToBank()
+	inputSDC := fr.ReadSDC("./Inputs/SDC_Business_Partner_General_sample.json")
+	accepter := getAccepter(inputSDC)
+	general := inputSDC.ConvertToGeneral()
+	role := inputSDC.ConvertToRole()
+	address := inputSDC.ConvertToAddress()
+	bank := inputSDC.ConvertToBank()
 
 	caller.AsyncPostBP(
 		general,
@@ -44,7 +44,7 @@ func getAccepter(sdc sap_api_input_reader.SDC) []string {
 
 	if accepter[0] == "All" {
 		accepter = []string{
-			"General", "Role", "Addres", "Bank",
+			"General", "Role", "Address", "Bank",
 		}
 	}
 	return accepter
