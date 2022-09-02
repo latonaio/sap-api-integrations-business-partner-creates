@@ -4,7 +4,7 @@
 	"redis_key": "abcdefg",
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
 	"business_partner": {
-		"BusinessPartner": "",
+		"BusinessPartner": "1000140",
 		"Customer": "",
 		"Supplier": "",
 		"AcademicTitle": "",
@@ -87,8 +87,8 @@
 			"AuthorizationGroup": ""
 		}
 	},
-	"api_schema": "sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1",
+	"api_schema": "SAPBusinessPartnerCreates",
 	"accepter": ["BPName"],
-	"business_partner_code": "",
+	"business_partner_code": "1000140",
 	"deleted": false
 }

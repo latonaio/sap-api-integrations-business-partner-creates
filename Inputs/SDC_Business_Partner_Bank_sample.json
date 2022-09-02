@@ -87,7 +87,7 @@
 			"AuthorizationGroup": ""
 		}
 	},
-	"api_schema": "sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1",
+	"api_schema": "SAPBusinessPartnerCreates",
 	"accepter": ["Bank"],
 	"business_partner_code": "1000140",
 	"deleted": false
