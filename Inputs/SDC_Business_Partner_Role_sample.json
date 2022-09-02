@@ -87,7 +87,7 @@
 			"AuthorizationGroup": ""
 		}
 	},
-	"api_schema": "sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1",
+	"api_schema": "SAPBusinessPartnerCreates",
 	"accepter": ["Role"],
 	"business_partner_code": "11",
 	"deleted": false

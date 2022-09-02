@@ -41,9 +41,9 @@ accepter において 下記の例のように、データの種別（＝APIの�
 ここでは、"General" が指定されています。    
   
 ```
-"api_schema": "SAPBusinessPartnerCreate",
+"api_schema": "SAPBusinessPartnerCreates",
 "accepter": ["General"],
-"xxxxx_xxxxx": "",
+"business_partner_code": "11",
 "deleted": false
 ```
   
@@ -52,9 +52,9 @@ accepter において 下記の例のように、データの種別（＝APIの�
 全データを取得する場合、sample.json は以下のように記載します。  
 
 ```
-"api_schema": "SAPBusinessPartnerCreate",
+"api_schema": "SAPBusinessPartnerCreates",
 "accepter": ["All"],
-"xxxxx_xxxxx": "",
+"business_partner_code": "11",
 "deleted": false
 ```
 
