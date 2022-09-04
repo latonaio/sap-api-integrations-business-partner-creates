@@ -54,27 +54,6 @@ func (sdc *SDC) ConvertToGeneral() *requests.General {
 		IsMarkedForArchiving:         data.IsMarkedForArchiving,
 		BusinessPartnerIDByExtSystem: data.BusinessPartnerIDByExtSystem,
 		TradingPartner:               data.TradingPartner,
-		ToRole: &struct {
-			ToRoleResults []*requests.Role `json:"results"`
-		}{
-			ToRoleResults: []*requests.Role{
-				sdc.ConvertToRole(),
-			},
-		},
-		ToAddress: &struct {
-			ToAddressResults []*requests.Address `json:"results"`
-		}{
-			ToAddressResults: []*requests.Address{
-				sdc.ConvertToAddress(),
-			},
-		},
-		ToBank: &struct {
-			ToBankResults []*requests.Bank `json:"results"`
-		}{
-			ToBankResults: []*requests.Bank{
-				sdc.ConvertToBank(),
-			},
-		},
 	}
 }
 

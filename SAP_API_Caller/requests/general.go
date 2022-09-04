@@ -48,13 +48,4 @@ type General struct {
 	IsMarkedForArchiving         *bool   `json:"IsMarkedForArchiving"`
 	BusinessPartnerIDByExtSystem *string `json:"BusinessPartnerIDByExtSystem"`
 	TradingPartner               *string `json:"TradingPartner"`
-	ToRole                       *struct {
-		ToRoleResults []*Role `json:"results"`
-	} `json:"to_BusinessPartnerRole"`
-	ToAddress *struct {
-		ToAddressResults []*Address `json:"results"`
-	} `json:"to_BusinessPartnerAddress"`
-	ToBank *struct {
-		ToBankResults []*Bank `json:"results"`
-	} `json:"to_BusinessPartnerBank"`
 }
